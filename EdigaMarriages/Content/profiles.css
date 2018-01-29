@@ -1,0 +1,91 @@
+﻿/*i.fa-plus-circle {
+    font-size: 48px;
+    color: #428bca;
+}
+
+
+
+    i.fa-plus-circle:hover {
+        font-size: 49px;
+        color: darkblue;
+    }
+
+
+i.fa-pencil-square-o {
+    font-size: 48px;
+    color: #428bca;
+}
+
+
+
+    i.fa-pencil-square-o:hover {
+        font-size: 49px;
+        color: darkblue;
+    }*/
+
+.even {
+    background-color: white;
+    border-bottom: solid 1px lightgrey;
+}
+
+.odd {
+    background-color: ghostwhite;
+    border-bottom: solid 1px lightgrey;
+}
+
+.no-top-bottom-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.no-border > tbody > tr > td {
+    border-top: 0;
+}
+
+.profile-btn {
+    margin: 5px;
+}
+
+.panel-primary > .panel-heading {
+    background-color: #ffa417 !important;
+    /*background-color: rgba(1,1,1,.01) !important;*/
+    border-color: #ffa417;
+}
+
+.panel-primary {
+    border-color: #ffa417;
+}
+
+.side-heading {
+    background-color: #c32143 !important;
+    padding: 12px 100px 12px 10px;
+    font-size: larger;
+    font-family: 'Lobster', cursive;
+}
+
+.panel-heading {
+    padding: 10px 15px 10px 0px;
+}
+
+/*.panel {
+    background-color: rgba(1,1,1,.5);
+}*/
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    background-color: #c32143;
+    border-color: #c32143;
+}
+
+.pagination {
+    margin:0;
+    padding:0;
+}
+
+a {
+    color: #c32143;
+}

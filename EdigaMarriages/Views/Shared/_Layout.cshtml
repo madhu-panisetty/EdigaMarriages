@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/profiles.css" rel="stylesheet" />
+    <script src="~/Scripts/Marriages/profiles.js"></script>
+    <script src="~/Scripts/Marriages/home.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">*@
+
+    @Scripts.Render("~/bundles/jquery")
+    @*<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @*<script src="~/Scripts/External/jquery.cookie.js"></script>*@
+
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">*@
+    <div class="navbar navbar-inverse-new navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/Home/Index">Gowda ediga Marriages</a>
+            </div>
+            <div class="navbar-collapse collapse pull-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Home/Index">Home</a></li>
+                    <li><a href="/Profiles/Index">Profiles</a></li>
+                    <li><a href="/Home/Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @*<div class="container body-content">*@
+
+    @RenderBody()
+
+
+
+    <div class="heart-divider">
+        <span class="grey-line"></span>
+        <i class="fa fa-heart pink-heart"></i>
+        <i class="fa fa-heart grey-heart"></i>
+        <span class="grey-line"></span>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="col-md-4 col_2">
+                <h4>About Us</h4>
+                <p>Gowda ediga marriages</p>
+            </div>
+            <div class="col-md-2 col_2">
+                <h4>Help &amp; Support</h4>
+                <ul class="footer_links">
+                    @*<li><a href="#">24x7 Live help</a></li>*@
+                    <li><a href="/Home/Contact">Contact us</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col_2">
+                <h4>Quick Links</h4>
+                <ul class="footer_links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="/Home/Terms">Terms and Conditions</a></li>
+                    @*<li><a href="services.html">Services</a></li>*@
+                </ul>
+            </div>
+            <div class="col-md-2 col_2">
+                <h4>Social</h4>
+                <ul class="footer_social">
+                    <li><a href="#"><i class="fa fa-facebook fa1"> </i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter fa1"> </i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus fa1"> </i></a></li>
+                    @*<li><a href="#"><i class="fa fa-youtube fa1"> </i></a></li>*@
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="copy">
+                <p>&copy; @DateTime.Now.Year - Gowda Ediga Marriages</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

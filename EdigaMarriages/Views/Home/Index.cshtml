@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="home-page banner">
+    <div class="text-center">
+        <span class="welcome-msg"> Welcome to Gowda Ediga Marriages</span>
+        <br />
+        <br />
+        <a class="hvr-shutter-out-horizontal" href="/profiles/new">Create Profile</a>
+    </div>
+    <br />
+
+    <div class="home-back">
+        <br />
+        <form class="form-horizontal">
+            <fieldset class="form-group">
+
+
+                <label for="surname" class="control-label col-sm-3 white-label">Your Surname:</label>
+                <input type="text" class="form-control col-sm-3" id="surname" placeholder="Panisetty" />
+                &nbsp;
+                <button type="button" class="btn btn-danger" id="searchBrideBySurname" onclick="home.searchBySurname(0);">Search Brides <i class="fa fa-female"></i></button>
+                <button type="button" class="btn btn-danger" id="searchBridegroomBySurname" onclick="home.searchBySurname(1);">Search Bridegrooms <i class="fa fa-male"></i></button>
+            </fieldset>
+            <fieldset class="form-group"></fieldset>
+
+            <fieldset class="form-group">
+                <label for="profileID" class="control-label col-sm-3 white-label">Pofile ID:</label>
+                <input type="text" class="form-control col-sm-3" id="profileID" placeholder="1" />
+                &nbsp;
+                <input type="button" class="btn btn-danger" id="searchByID" onclick="home.serachByID();" value="Search By ID" />
+            </fieldset>
+        </form>
+        <br>
+    </div>
+    @*<div class="marquee">
+            <marquee behavior="scroll" direction="up" scrolldelay="100">
+                Panisetty <br />
+                Chittem <br />
+                Testing <br />
+                More data <br />
+                My name <br />
+                Test nmae <br />
+                First name <br />
+            </marquee>
+        </div>*@
+
+</div>
+
+<script>
+    home.autoCompleteSurname();
+</script>

@@ -1,0 +1,318 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+
+.navbar-inverse-new {
+    padding: 7px 0;
+    background: #c32143;
+    /*border: none;*/
+    /*font-size: 0.85em;*/
+    -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
+    -moz-box-shadow: 0 5px 5px rgba(0,0,0,0.14);
+    /*-o-box-shadow: 0 5px 5px rgba(0,0,0,0.14);*/
+    box-shadow: 0 5px 5px rgba(0,0,0,0.14);
+}
+
+    .navbar-inverse-new a {
+        color: white;
+    }
+
+.body-content {
+    margin-top: 50px;
+}
+
+html, body {
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-size: 100%;
+    /*background: #fff;*/
+    background-color: #fff !important;
+}
+
+    body a {
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        /*-ms-transition: 0.5s all;*/
+    }
+
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus, .nav > li > a:hover, .nav > li > a:focus {
+    background-color: #ffa417 !important;
+    border-color: #ffa417;
+    color: #fff !important;
+}
+
+.navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+}
+
+.banner {
+    background: url(../images/back-ground-new.jpg)no-repeat center top;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    /*min-height: 650px;*/
+    padding-bottom: 0;
+}
+
+
+
+.home-page {
+    /*min-height: 600px;*/
+    padding-top: 75px;
+    padding-bottom:3px;
+}
+
+.welcome-msg {
+    font-size: 4em;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    align-self: center;
+}
+
+.home-back {
+    width: 100%;
+    background-color: rgba(12, 9, 10, 0.29);
+    /*border-radius: 10px;*/
+    margin-top: 100px;
+}
+
+.white-label {
+    color: white;
+}
+
+
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.heart-divider {
+    height: 100%;
+    width: 100%;
+    margin: 2em auto;
+    text-align: center;
+}
+
+.grey-line {
+    width: 30%;
+    height: 8px;
+    display: inline-block;
+    border-top: solid 2px #e1dddd;
+}
+
+.pink-heart {
+    color: #c32143;
+    font-size: 18px;
+    position: relative;
+    z-index: 3;
+}
+
+.grey-heart {
+    color: #e1dddd;
+    font-size: 18px;
+    margin-left: -15px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Shutter Out Horizontal */
+.hvr-shutter-out-horizontal {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    background: #c32143;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    padding: 12px 40px;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 20px;
+}
+
+    .hvr-shutter-out-horizontal:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #555;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+
+    .hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
+        color: white;
+        text-decoration: none;
+    }
+
+        .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+        }
+
+/*-- footer --*/
+
+/*footer {
+    position: relative;
+    bottom: 0;
+    background-color: #fff !important;
+    border-color: #fff;
+    min-height: 100px;
+}
+
+.footer {
+    background-color: rgba(12, 9, 10, 0.29);
+    background-color: #fff !important;
+    border-color: #fff;
+}*/
+
+.footer {
+    background: #fff;
+    padding: 5em 0;
+}
+
+.col_2 h4 {
+    color: #000;
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+.col_2 p {
+    color: #555;
+    font-size: 0.85em;
+    line-height: 1.8em;
+}
+
+ul.footer_links {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+    ul.footer_links li {
+        font-size: 0.85em;
+        line-height: 1.8em;
+    }
+
+        ul.footer_links li a {
+            color: #555;
+        }
+
+ul.footer_social {
+    padding: 0;
+    margin: 0 0 1em;
+    list-style: none;
+}
+
+    ul.footer_social li {
+        display: inline-block;
+        text-align: center;
+    }
+
+i.fa1 {
+    background: #c32143;
+    width: 26px;
+    height: 26px;
+    color: #fff;
+    line-height: 26px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+    i.fa1:hover {
+        background-color: #555;
+    }
+
+.copy {
+    margin: 3em 0 0 0;
+    text-align: center;
+}
+
+    .copy p {
+        color: #555;
+        font-size: 0.85em;
+    }
+
+        .copy p a {
+            color: #c32143;
+        }
+
+            .copy p a:hover {
+                color: #555;
+                text-decoration: none;
+            }
+
+  /************ Auto complete ***************/
+.ui-autocomplete {
+    position: absolute;
+    z-index: 1000;
+    cursor: default;
+    padding: 0;
+    margin-top: 2px;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+    .ui-autocomplete > li {
+        padding: 3px 20px;
+    }
+
+        .ui-autocomplete > li.ui-state-focus {
+            background-color: #DDD;
+        }
+
+.ui-helper-hidden-accessible {
+    display: none;
+}
