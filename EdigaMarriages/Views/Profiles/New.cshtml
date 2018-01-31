@@ -1,0 +1,206 @@
+﻿@model EdigaMarriages.Models.MProfile
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_LayoutPageContainer.cshtml";
+    bool createNew = false;
+    if (string.IsNullOrWhiteSpace(Model.ProfileID))
+    {
+        createNew = true;
+        Model.DateOfBirth = Convert.ToDateTime("1-Jan-1980");
+    }
+}
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        @if (createNew)
+        {
+            <span class="side-heading">Add New Profile</span>
+        }
+        else
+        {
+            <span class="side-heading">Edit Profile</span>
+        }
+
+    </div>
+    <div class="panel-body">
+
+        <form class="form-horizontal" action="#" onsubmit="profiles.save(@createNew.ToString().ToLower());return false;">
+            <div class="col-md-6">
+                <fieldset class="form-group">
+                    <label class="control-label col-sm-3" for="profileID">ID:</label>
+
+                    <input class="form-control col-sm-3" readonly type="text" id="profileID" placeholder="Will be generated after save" value="@Model.ProfileID" />
+
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label class="control-label col-sm-3" for="surname">Surname:</label>
+                    <input type="text" class="form-control col-sm-3" id="surname" placeholder="Panisetty" required value="@Model.Surname" />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="name" class="control-label col-sm-3">Name:</label>
+                    <input type="text" class="form-control col-sm-3" id="name" placeholder="Vilo" value="@Model.Name" required />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="fatherName" class="control-label col-sm-3">FatherName:</label>
+                    <input type="text" class="form-control col-sm-3" id="fatherName" placeholder="Madhu" value="@Model.FatherName" required />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="motherSurName" class="control-label col-sm-3">MotherSurName:</label>
+                    <input type="text" class="form-control col-sm-3" id="motherSurName" placeholder="Bathala" value="@Model.MotherSurName" />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="brothers" class="control-label col-sm-3">Brothers:</label>
+                    <input type="text" class="form-control col-sm-3" id="brothers" placeholder="1 UnMarried" value="@Model.Brothers" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="sisters" class="control-label col-sm-3">Sisters:</label>
+                    <input type="text" class="form-control col-sm-3" id="sisters" placeholder="1 Married, 1 UnMarried" value="@Model.Sisters" required />
+                </fieldset>
+
+
+
+                <fieldset class="form-group">
+                    <div class="btn-group col-sm-9 pull-right" data-toggle="buttons" align="center">
+
+                        <label class="btn btn-default active profile-btn" id="genderMale">
+                            <input type="radio" name="gender" id="maleOpt"> Male
+                        </label>
+                        <label class="btn btn-default profile-btn" id="genderFemale">
+                            <input type="radio" name="gender" id="femaleOpt"> Female
+                        </label>
+
+                    </div>
+
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="dateOfBirth" class="control-label col-sm-3">DOB:</label>
+                    <input type="text" class="form-control col-sm-3" id="dateOfBirth" value="@Model.DateOfBirth.ToString("dd-MMM-yyyy")" required />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="placeOfBirth" class="control-label col-sm-3">Place Of Birth:</label>
+                    <input type="text" class="form-control col-sm-3" id="placeOfBirth" placeholder="Rajempet" value="@Model.PlaceOfBirth" />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="raasi" class="control-label col-sm-3">Raasi:</label>
+                    <input type="text" class="form-control col-sm-3" id="raasi" placeholder="Taurus" value="@Model.Raasi" />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="birthStar" class="control-label col-sm-3">BirthStar:</label>
+                    <input type="text" class="form-control col-sm-3" id="birthStar" placeholder="Rohini" value="@Model.BirthStar" />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="height" class="control-label col-sm-3">Height:</label>
+                    <input type="text" class="form-control col-sm-3" id="height" placeholder="5' 6" value="@Model.Height" />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="colour" class="control-label col-sm-3">Colour:</label>
+                    <input type="text" class="form-control col-sm-3" id="colour" placeholder="Fair" value="@Model.Colour" />
+                </fieldset>
+            </div>
+
+            <div class="col-md-6">
+                <fieldset class="form-group">
+                    <label for="education" class="control-label col-sm-3">Education:</label>
+                    <input type="text" class="form-control col-sm-3" id="education" placeholder="BTech CSE" value="@Model.Education" required />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="occupation" class="control-label col-sm-3">Occupation:</label>
+                    <input type="text" class="form-control col-sm-3" id="occupation" placeholder="Manager, TCS, Banglore" value="@Model.Occupation" required />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="annualIncome" class="control-label col-sm-3">AnnualIncome:</label>
+                    <input type="text" class="form-control col-sm-3" id="annualIncome" placeholder="1 lakh per month" value="@Model.AnnualIncome" required />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="phone" class="control-label col-sm-3">Phone:</label>
+                    <input type="text" class="form-control col-sm-3" id="phone" placeholder="891 123456" value="@Model.Phone" />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="mobile" class="control-label col-sm-3">Mobile:</label>
+                    <input type="text" class="form-control col-sm-3" id="mobile" placeholder="9123456789" value="@Model.Mobile" required />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="email" class="control-label col-sm-3">Email:</label>
+                    <input type="email" class="form-control col-sm-3" id="email" placeholder="name@gmail.com" value="@Model.Email" />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="address" class="control-label col-sm-3">City/Village:</label>
+                    <input type="text" class="form-control col-sm-3" id="address" placeholder="Visakhapatnam" value="@Model.Address" required />
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="requirement" class="control-label col-sm-3">Requirement:</label>
+                    <input type="text" class="form-control col-sm-3" id="requirement" placeholder="House wife with any degree" value="@Model.Requirement" required />
+                </fieldset>
+
+                @*<fieldset class="form-group">
+                        <label for="deleted" class="control-label col-sm-3">Deleted:</label>
+                        <input type="checkbox" class="form-control col-sm-3" id="deleted" placeholder="Deleted" value="@Model.Deleted" />
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label for="approved" class="control-label col-sm-3">Approved:</label>
+                        <input type="checkbox" class="form-control col-sm-3" id="approved" placeholder="Approved" value="@Model.Approved" />
+                    </fieldset>*@
+
+            </div>
+
+            <footer>
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="reset" class="btn btn-default profile-btn">Clear</button>
+                    <button type="submit" class="btn btn-default profile-btn" id="saveButton">Save</button>
+                </div>
+            </footer>
+        </form>
+    </div>
+</div>
+
+
+
+
+@if (createNew)
+{
+
+}
+else
+{
+
+    if (Model.Gender == true)
+    {
+        <script>
+            $("#genderMale").addClass('active');
+            $("#genderFemale").removeClass('active');
+        </script>
+    }
+    else
+    {
+        <script>
+            $("#genderMale").removeClass('active');
+            $("#genderFemale").addClass('active');
+        </script>
+    }
+
+}
+
+<script>
+    home.autoCompleteSurname();
+</script>
+
+

@@ -1,4 +1,5 @@
 ﻿
+using EdigaMarriages.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace EdigaMarriages.Controllers
 {
     public class HomeController : Controller
     {
-        //private MarriagesDB marriagesDB;
+        private MarriagesDB marriagesDB;
 
         public HomeController()
         {
-            //marriagesDB = new MarriagesDB();
+            marriagesDB = new MarriagesDB();
         }
 
         public ActionResult Index()
@@ -39,7 +40,7 @@ namespace EdigaMarriages.Controllers
         {
             List<string> surnames = new List<string>();
 
-            //surnames = marriagesDB.GetSurnames();
+            surnames = marriagesDB.GetSurnames();
 
             return Json(surnames, JsonRequestBehavior.AllowGet);
         }

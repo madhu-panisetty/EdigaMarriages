@@ -1,0 +1,141 @@
+﻿@model EdigaMarriages.ViewModels.ProfilesIndex
+
+@{
+    Layout = "~/Views/Shared/_LayoutPageContainer.cshtml";
+}
+
+
+<div>
+    <div class="col-sm-6">
+        @if (Model.SearchFilter != null)
+        {
+            <label>Your Surname:</label>
+            @Model.SearchFilter.Surname
+            <label>Searching for:</label>
+            if (Model.SearchFilter.Gender)
+            {
+                <span>Bridegroom</span>
+            }
+            else
+            {
+                <span>Bride</span>
+            }
+
+            <input type="button" class="btn btn-danger" id="removeSearch" onclick="profiles.removeSearch();" value="Remove Search" />
+        }
+
+    </div>
+    <div align="right">
+        <a href="/Profiles/New" id="newButton" class="btn btn-success profile-btn">NEW <i class="fa fa-plus-circle"></i></a>
+    </div>
+
+</div>
+
+<br />
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">
+        <span class="side-heading">Profiles</span>
+        @*<h4>Profiles</h4>*@
+    </div>
+
+    <div class="panel-body table no-top-bottom-padding">
+
+        @for (int i = 0; i < Model.ProfilesList.Count; i++)
+        {
+            var profile = Model.ProfilesList[i];
+            var colorClass = "even";
+
+            if (i % 2 == 0)
+            {
+                colorClass = "even";
+            }
+            else
+            {
+                colorClass = "odd";
+            }
+
+            <div class="row @colorClass">
+                <div class="col-md-10">
+                    <div class="col-md-3">
+                        Profile ID: @profile.ProfileID
+                        <br />
+
+                        @profile.Surname @profile.Name
+                        <br />
+                        @if (!string.IsNullOrWhiteSpace(profile.FatherName))
+                        {
+                            if (profile.Gender == true)
+                            {
+                                <span>S/O</span>
+                            }
+                            else
+                            {
+                                <span>D/O</span>
+                            }
+                            @profile.FatherName
+                        }
+
+                        <br />
+                        @profile.Address
+                    </div>
+                    <div class="col-md-3">
+                        DOB: @if (@profile.DateOfBirth.Year != 1)
+                        {
+                            @profile.DateOfBirth.ToString("dd-MMM-yyyy")
+                        }
+                        <br />
+                        Height: @profile.Height<br />
+                        Brothers: @profile.Brothers <br />
+                        Sisters: @profile.Sisters
+                    </div>
+
+                    <div class="col-md-3">
+                        Education: @profile.Education
+                        <br />Job: @profile.Occupation
+                        <br />Income: @profile.AnnualIncome
+                    </div>
+
+
+                    <div class="col-md-3">
+                        Requirement: @profile.Requirement
+                    </div>
+
+
+                </div>
+
+                <div class="col" align="right">
+                    @if (Model.IsAdmin)
+                    {
+                        <a href="/Profiles/Edit?profileID=@profile.ProfileID" id="editButton" class="profile-btn btn btn-warning">EDIT <i class="fa fa-pencil-square-o"></i></a>
+                    }
+
+                    <a href="/Profiles/Details?profileID=@profile.ProfileID" id="detailsButton" class="profile-btn btn btn-warning">VIEW <i class="fa fa-pencil-square-o"></i></a>
+
+
+                </div>
+            </div>
+        }
+
+
+    </div>
+
+    <div class="panel-footer" align="right">
+        <ul class="pagination">
+            @for (int i = 1; i <= Model.TotalProfiles / Model.PageSize + 1; i++)
+            {
+                if (i == Model.CurrentPage)
+                {
+                    <li class="active"><a>@i</a></li>
+                }
+                else
+                {
+                    <li><a href="/Profiles/index?page=@i&pagesize=@Model.PageSize">@i</a></li>
+                }
+
+            }
+        </ul>
+    </div>
+
+</div>

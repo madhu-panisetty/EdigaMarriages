@@ -1,0 +1,173 @@
+﻿@model EdigaMarriages.Models.MProfile
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPageContainer.cshtml";
+    bool isAdmin = ViewBag.IsAdmin;
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <span class="side-heading">Profile Details</span>
+    </div>
+
+    <div class="panel-body">
+
+        <form class="form-horizontal" action="#">
+            <div class="col-md-6">
+                <fieldset class="form-group">
+                    <label class="control-label col-sm-3" for="profileID">ID:</label>
+
+                    <p class="form-control-static col-sm-3" id="profileID">@Model.ProfileID</p>
+
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label class="control-label col-sm-3" for="surname">Surname:</label>
+                    <p class="form-control-static col-sm-3" id="surname">@Model.Surname</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="name" class="control-label col-sm-3">Name:</label>
+                    <p class="form-control-static col-sm-3" id="name">@Model.Name</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="fatherName" class="control-label col-sm-3">FatherName:</label>
+                    <p class="form-control-static col-sm-3" id="fatherName">@Model.FatherName</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="motherSurName" class="control-label col-sm-3">MotherSurName:</label>
+                    <p class="form-control-static col-sm-3" id="motherSurName">@Model.MotherSurName</p>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="brothers" class="control-label col-sm-3">Brothers:</label>
+                    <p class="form-control-static col-sm-3" id="brothers">@Model.Brothers</p>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="sisters" class="control-label col-sm-3">Sisters:</label>
+                    <p class="form-control-static col-sm-3" id="sisters">@Model.Sisters</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="gender" class="control-label col-sm-3">Gender:</label>
+                    <p class="form-control-static col-sm-3" id="gender">
+                        @if (Model.Gender)
+                        {
+                            <span>Male</span>
+                        }
+                        else
+                        {
+                            <span>Female</span>
+                        }
+                    </p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="dateOfBirth" class="control-label col-sm-3">DOB:</label>
+                    <p class="form-control-static col-sm-3" id="dateOfBirth">@Model.DateOfBirth.ToString("dd-MMM-yyyy")</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="placeOfBirth" class="control-label col-sm-3">Place Of Birth:</label>
+                    <p class="form-control-static col-sm-3" id="placeOfBirth">@Model.PlaceOfBirth</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="raasi" class="control-label col-sm-3">Raasi:</label>
+                    <p class="form-control-static col-sm-3" id="raasi">@Model.Raasi</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="birthStar" class="control-label col-sm-3">BirthStar:</label>
+                    <p class="form-control-static col-sm-3" id="birthStar">@Model.BirthStar</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="height" class="control-label col-sm-3">Height:</label>
+                    <p class="form-control-static col-sm-3" id="height">@Model.Height</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="colour" class="control-label col-sm-3">Colour:</label>
+                    <p class="form-control-static col-sm-3" id="colour">@Model.Colour</p>
+                </fieldset>
+            </div>
+
+            <div class="col-md-6">
+                <fieldset class="form-group">
+                    <label for="education" class="control-label col-sm-3">Education:</label>
+                    <p class="form-control-static col-sm-3" id="education">@Model.Education</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="occupation" class="control-label col-sm-3">Occupation:</label>
+                    <p class="form-control-static col-sm-3" id="occupation">@Model.Occupation</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="annualIncome" class="control-label col-sm-3">AnnualIncome:</label>
+                    <p class="form-control-static col-sm-3" id="annualIncome">@Model.AnnualIncome</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="phone" class="control-label col-sm-3">Phone:</label>
+                    <p class="form-control-static col-sm-3" id="phone">
+                        @if (isAdmin || string.IsNullOrEmpty(@Model.Phone))
+                        {
+                            @Model.Phone
+                        }
+                        else
+                        {
+                            <span><i class="fa fa-lock" aria-hidden="true"></i> Protected</span>
+                        }
+                    </p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="mobile" class="control-label col-sm-3">Mobile:</label>
+                    <p class="form-control-static col-sm-3" id="mobile">
+                        @if (isAdmin || string.IsNullOrEmpty(@Model.Mobile))
+                        {
+                            @Model.Mobile
+                        }
+                        else
+                        {
+                            <span><i class="fa fa-lock" aria-hidden="true"></i> Protected</span>
+                        }
+                    </p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="email" class="control-label col-sm-3">Email:</label>
+                    <p class="form-control-static col-sm-3" id="email">
+                        @if (isAdmin || string.IsNullOrEmpty(@Model.Email))
+                        {
+                            @Model.Email
+                        }
+                        else
+                        {
+                            <span><i class="fa fa-lock" aria-hidden="true"></i> Protected</span>
+                        }
+                    </p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="address" class="control-label col-sm-3">City/Village:</label>
+                    <p class="form-control-static col-sm-3" id="address">@Model.Address</p>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label for="requirement" class="control-label col-sm-3">Requirement:</label>
+                    <p class="form-control-static col-sm-3" id="requirement">@Model.Requirement</p>
+                </fieldset>
+
+
+
+            </div>
+
+
+        </form>
+    </div>
+
+</div>

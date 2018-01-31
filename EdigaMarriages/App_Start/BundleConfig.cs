@@ -11,6 +11,12 @@ namespace EdigaMarriages
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
+                        "~/Scripts/external/jquery-ui.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jquery-cookie").Include(
+                        "~/Scripts/external/jquery.cookie.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
@@ -30,7 +36,9 @@ namespace EdigaMarriages
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/font-awesome.css",
+                      "~/Content/jquery-ui.css",
                       "~/Content/site.css",
+                      "~/Content/fonts.css",
                       "~/Content/profiles.css"));
         }
     }
