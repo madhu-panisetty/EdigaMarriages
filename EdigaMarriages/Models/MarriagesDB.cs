@@ -20,7 +20,7 @@ namespace EdigaMarriages.Models
             int rowStart = ((page - 1) * pageSize);
 
             MProfile profile;
-            string queryString = "select * from Profiles where deleted=0";
+            string queryString = "select * from profiles where deleted=0";
 
             if (search != null)
             {
@@ -96,7 +96,7 @@ namespace EdigaMarriages.Models
         public int GetProfilesCount(Search search)
         {
             int count;
-            string queryString = "select count(*) from Profiles where deleted=0";
+            string queryString = "select count(*) from profiles where deleted=0";
 
             if (search != null)
             {
@@ -130,7 +130,7 @@ namespace EdigaMarriages.Models
         public MProfile GetProfile(string profileID)
         {
             MProfile profile = new MProfile();
-            string queryString = "select * from Profiles where profileID=@profileID";
+            string queryString = "select * from profiles where profileID=@profileID and deleted=0";
 
             using (MySqlConnection connection =
             new MySqlConnection(connectionString))
@@ -188,7 +188,7 @@ namespace EdigaMarriages.Models
             if (createNew)
             {
 
-                queryString = @"Insert into Profiles ( SurName, Name, FatherName, MotherSurName, Brothers, Sisters,
+                queryString = @"Insert into profiles ( SurName, Name, FatherName, MotherSurName, Brothers, Sisters,
                         Gender, DateOfBirth, Height, Colour, PlaceOfBirth, Raasi, BirthStar,
                         Education, Occupation, AnnualIncome,
                         Requirement, Address, Phone, Mobile, Email) 
@@ -200,7 +200,7 @@ namespace EdigaMarriages.Models
             }
             else
             {
-                queryString = @"Update Profiles set SurName=@SurName, Name=@Name, FatherName=@FatherName,
+                queryString = @"Update profiles set SurName=@SurName, Name=@Name, FatherName=@FatherName,
                         MotherSurName=@MotherSurName, Brothers=@Brothers, Sisters=@Sisters,
                         Gender=@Gender, DateOfBirth=@DateOfBirth, Height=@Height,
                         Colour=@Colour, PlaceOfBirth=@PlaceOfBirth, Raasi=@Raasi,
@@ -261,7 +261,7 @@ namespace EdigaMarriages.Models
         public List<string> GetSurnames()
         {
             List<string> surnames = new List<string>();
-            string queryString = "select surname from Surnames order by surname";
+            string queryString = "select surname from surnames order by surname";
 
             using (MySqlConnection connection =
             new MySqlConnection(connectionString))

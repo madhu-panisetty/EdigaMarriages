@@ -1,13 +1,13 @@
 ﻿var home = {};
 
 home.init = function () {
-    
+
 };
 
 home.autoCompleteSurname = function () {
 
     var urlString = "/Home/GetSurnames";
-    
+
     //$.cookie('profile', JSON.stringify(profile), { path: '/' });
 
     $.ajax(
@@ -16,7 +16,7 @@ home.autoCompleteSurname = function () {
             url: urlString, // Controller/View   
             cache: false,
             success: function (response) {
-                
+
                 var availableTags = response;
 
                 $("#surname").autocomplete({
@@ -30,7 +30,7 @@ home.autoCompleteSurname = function () {
 
         });
 
-  
+
 }
 
 
@@ -46,7 +46,7 @@ home.serachByID = function () {
     urlString = urlString + 'profileID=' + $("#profileID").val();
 
     window.location = urlString;
-    
+
 };
 
 
@@ -61,10 +61,10 @@ home.searchBySurname = function (gender) {
         Surname: $("#surname").val(),
         Gender: gender
     }
-    $.cookie('search', JSON.stringify(search));
+    $.cookie('search', JSON.stringify(search), { path: '/' });
 
     var urlString = "/Profiles/Index?";
-   
+
     window.location = urlString;
 
 };

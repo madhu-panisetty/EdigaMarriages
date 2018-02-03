@@ -1,6 +1,6 @@
 ﻿@model EdigaMarriages.Models.MProfile
 @{
-    ViewBag.Title = "New";
+    ViewBag.Title = "Edit Profile";
     Layout = "~/Views/Shared/_LayoutPageContainer.cshtml";
     bool createNew = false;
     if (string.IsNullOrWhiteSpace(Model.ProfileID))
@@ -117,12 +117,12 @@
 
                 <fieldset class="form-group">
                     <label for="occupation" class="control-label col-sm-3">Occupation:</label>
-                    <input type="text" class="form-control col-sm-3" id="occupation" placeholder="Manager, TCS, Banglore" value="@Model.Occupation" required />
+                    <input type="text" class="form-control col-sm-3" id="occupation" placeholder="Manager, ISRO, Nellore" value="@Model.Occupation" required />
                 </fieldset>
 
                 <fieldset class="form-group">
                     <label for="annualIncome" class="control-label col-sm-3">AnnualIncome:</label>
-                    <input type="text" class="form-control col-sm-3" id="annualIncome" placeholder="1 lakh per month" value="@Model.AnnualIncome" required />
+                    <input type="text" class="form-control col-sm-3" id="annualIncome" placeholder="15,000 per month" value="@Model.AnnualIncome" required />
                 </fieldset>
 
                 <fieldset class="form-group">

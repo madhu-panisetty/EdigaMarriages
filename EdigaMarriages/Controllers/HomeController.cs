@@ -47,7 +47,7 @@ namespace EdigaMarriages.Controllers
 
         public ActionResult Login(string password = "")
         {
-            if (password.Equals("samsung@123"))
+            if (password.Equals("password@123"))
             {
                 HttpCookie aCookie = new HttpCookie("admin", "true");
                 //Request.Cookies.Remove("admin");
