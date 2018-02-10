@@ -86,17 +86,19 @@ namespace EdigaMarriages.Controllers
                 }
 
                 string response = marriagesDB.SaveProfile(profile, createNew);
-
+                
                 if (createNew)
                 {
+                    //Mailer.SendMail("Created profile " + profile.ProfileID, "Created Successfully");
                     return "Saved pofile with ID " + response;
                 }
                 else
                 {
+                    //Mailer.SendMail("Updated profile " + profile.ProfileID, "Updated Successfully");
                     return "Updated profile " + profile.ProfileID;
                 }
 
-
+                
             }
             catch (Exception ex)
             {
